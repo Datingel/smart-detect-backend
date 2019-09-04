@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt-nodejs');
 const hash = bcrypt.hashSync('bacon');
 const cors = require('cors');
 const knex = require('knex');
+const port = process.env.PORT || 3000;
 
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
@@ -51,7 +52,7 @@ app.post('/imageurl', (req, res) => {
   image.handleApiCall(req, res);
 });
 
-app.listen(process.env.PORT || 3000, err => {
+app.listen(process.env.PORT || port, err => {
   if (err) {
     throw new Error('Something bad happened...');
   }
