@@ -30,9 +30,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.send('it is working');
 });
+
+app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.post('/signin', (req, res) => {
   signin.handleSignin(req, res, db, bcrypt);
