@@ -39,8 +39,9 @@ const ignoreFavicon(req, res, next) => {
 }
 
 app.use(ignoreFavicon);
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.send('it is working');
 });
 
