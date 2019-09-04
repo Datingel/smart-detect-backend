@@ -30,11 +30,21 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
 
+const ignoreFavicon(req, res, next) => {
+  if (req.originalUrl === '/favicon.ico') {
+    res.status(204).json({nope: true});
+  } else {
+    next();
+  }
+}
+
+app.use(ignoreFavicon);
+
 app.get('*', (req, res) => {
   res.send('it is working');
 });
 
-app.get('/favicon.ico', (req, res) => res.status(204));
+// app.get('/favicon.ico', (req, res) => res.sendStatus(204));
 
 app.post('/signin', (req, res) => {
   signin.handleSignin(req, res, db, bcrypt);

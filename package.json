@@ -15,7 +15,8 @@
     "cors": "^2.8.5",
     "express": "^4.16.2",
     "knex": "^0.14.6",
-    "pg": "^7.12.1"
+    "pg": "^7.12.1",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "nodemon": "^1.12.7"
