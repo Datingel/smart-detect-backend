@@ -2,9 +2,12 @@
   "name": "node",
   "version": "1.0.0",
   "main": "server.js",
-  "scripts": {
+  "scripts": {    
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
-    "start:dev": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"  
   },
   "keywords": [],
   "author": "",
@@ -21,6 +24,5 @@
   },
   "devDependencies": {
     "nodemon": "^1.12.7"
-  },
-  "description": ""
+  }
 }
