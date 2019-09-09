@@ -54,9 +54,6 @@ app.post('/imageurl', (req, res) => {
   image.handleApiCall(req, res);
 });
 
-app.listen(port, err => {
-  if (err) {
-    throw new Error('Something bad happened...');
-  }
+app.listen(port, () => {
   console.log(`Server is listening on ${port}`);
 });
