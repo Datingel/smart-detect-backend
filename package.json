@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "node script.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,7 @@
     "body-parser": "^1.18.2",
     "clarifai": "^2.9.1",
     "cors": "^2.8.5",
-    "express": "^4.16.2",
+    "express": "^4.17.1",
     "knex": "^0.14.6",
     "pg": "^7.12.1",
     "serve-favicon": "^2.5.0"

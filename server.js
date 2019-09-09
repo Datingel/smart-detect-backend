@@ -30,16 +30,16 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
 
-const ignoreFavicon(req, res, next) => {
-  if (req.originalUrl === '/favicon.ico') {
-    res.status(204).json({nope: true});
-  } else {
-    next();
-  }
-}
+// function ignoreFavicon(req, res, next) {
+//   if (req.originalUrl === '/favicon.ico') {
+//     res.status(204).json({nope: true});
+//   } else {
+//     next();
+//   }
+// }
 
-app.use(ignoreFavicon);
-app.use(favicon(__dirname + '/public/favicon.ico'));
+// app.use({ignoreFavicon});
+// app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.get('/', (req, res) => {
   res.send('it is working');
@@ -65,9 +65,9 @@ app.post('/imageurl', (req, res) => {
   image.handleApiCall(req, res);
 });
 
-app.listen(process.env.PORT || port, err => {
+app.listen(port, err => {
   if (err) {
     throw new Error('Something bad happened...');
   }
-  console.log(`Server is listening on ${process.env.PORT}`);
+  console.log(`Server is listening on ${port}`);
 });
