@@ -1,9 +1,10 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "main": "node script.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",

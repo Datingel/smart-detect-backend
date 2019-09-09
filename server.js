@@ -38,14 +38,14 @@ app.use(cors());
 //   }
 // }
 
-// app.use({ignoreFavicon});
+// app.use(ignoreFavicon);
 // app.use(favicon(__dirname + '/public/favicon.ico'));
 
-// app.get('/', (req, res) => {
-//   res.send('it is working');
-// });
+app.get('/', (req, res) => {
+  res.send('it is working');
+});
 
-// app.get('/favicon.ico', (req, res) => res.sendStatus(204));
+app.get('/favicon.ico', (req, res) => res.sendStatus(204));
 
 app.post('/signin', (req, res) => {
   signin.handleSignin(req, res, db, bcrypt);
