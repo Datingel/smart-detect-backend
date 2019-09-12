@@ -1,1 +1,1 @@
-face-detect backend server
+#smart-detect backend server
