@@ -6,6 +6,7 @@ const hash = bcrypt.hashSync('bacon');
 const cors = require('cors');
 const knex = require('knex');
 const port = process.env.PORT || 3000;
+// const {Client} = require ('pg');
 
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
@@ -15,10 +16,8 @@ const image = require('./controllers/images');
 const db = knex({
   client: 'pg',
   connection: {
-    host: 'postgresql-slippery-31859',
-    user: 'datingel',
-    password: '',
-    database: 'smart-brain',
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 
